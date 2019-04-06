@@ -1,0 +1,8 @@
+arr = []
+
+t=int(input())
+n=int(input())
+for _ in range(t):
+    for _ in range(n):
+        arr.append((map(int, input().split(" "))))
+    print(arr)

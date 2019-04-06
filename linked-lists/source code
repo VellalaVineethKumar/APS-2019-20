@@ -1,0 +1,117 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+
+struct node{
+    int data;
+    struct node * next;
+    
+};
+
+typedef struct node NODE;
+
+NODE * insert_start(NODE * start)
+{
+    
+    NODE * newnode;
+    newnode =(NODE *)malloc(sizeof(NODE));
+    if(newnode==NULL)
+    {
+        printf("no space\n");
+        return start;
+    }
+    
+    printf("enter node data\n");
+    scanf("%d",&newnode->data);
+    
+    if(start==NULL)
+    return newnode
+    else{
+        newnode->next=start;
+        return newnode;
+    }
+}
+
+NODE * insert_end(NODE *start)
+{
+    NODE *newnode;
+    newnode=(NODE*)malloc(sizeof(NODE));
+    
+        if(newnode==NULL)
+    {
+        printf("no space\n");
+        return start;
+    }
+    printf("enter node data\n");
+    scanf("%d",&newnode->data);
+    //traverse till end 
+    while(start->next==NULL)
+    {
+        start->next=newnode;
+        newnode->next=NULL;
+    }
+    
+}
+
+
+NODE * delete_start(NODE *start)
+{
+    NODE *newnode;
+    newnode=(NODE*)malloc(sizeof(NODE));
+    
+        if(newnode==NULL)
+    {
+        printf("no space\n");
+        return start;
+    }
+    
+    start=start->next;
+    
+
+    //here free is important 
+}
+
+
+NODE * delete_end(NODE *start)
+{
+    NODE *newnode;
+    newnode=(NODE*)malloc(sizeof(NODE));
+    
+        if(newnode==NULL)
+    {
+        printf("no space\n");
+        return start;
+    }
+    
+    start=start->next;
+NODE *curr=start,*prev=NULL;
+
+while(curr->next!=NULL){
+    prev=curr;
+    curr=curr->next;
+    
+}
+
+prev->next=NULL;
+
+free(curr);
+
+return start;
+
+    //here free is important think how to free the node using a temp variable
+}
+
+
+
+int main()
+{
+    printf("Hello World");
+
+    return 0;
+}
